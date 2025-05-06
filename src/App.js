@@ -1,12 +1,22 @@
-import './App.css';
+import styles from './App.module.css';
 import React from 'react';
-import DateSelector from './Components/DateSelector';
+import SearchBar from './Components/SearchBar';
 
 function App() {
   return (
-    <div>
-      <h1>My Date Picker App</h1>
-      <DateSelector />
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>ja<span style={{color: 'purple'}}>mmm</span>ing</h1>
+      </header>
+      <main className={styles.main}>
+        <section>
+          <SearchBar />
+        </section>
+        <section></section>
+      </main>
+      <footer className={styles.footer}>
+        <p>© 2025 jammming</p>
+      </footer>
     </div>
   );
 }
