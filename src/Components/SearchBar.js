@@ -1,28 +1,21 @@
 import React, { useState } from 'react';
 
-function SearchBar() {
-    const [search, setSearch] = useState('');
 
-    const handleSearch = (event) => {
-        event.preventDefault();
-        setSearch(event.target.value);
-        //some code here to fetch playlist
-        setSearch('');      
-    }
+function SearchBar(props) {
+   const { handleSearch, search, setSearch } = props;
 
     return (
-        <>
+
           <form onSubmit={handleSearch}>
           <input
             name='searchBar'
+            placeholder='Artist or Title'
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
           <button type='submit'>Search</button>
           </form>
-          
-        </>
-    );
+    )
 };
 
 export default SearchBar;
