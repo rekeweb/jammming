@@ -1,14 +1,14 @@
 import React from 'react';
 
-function SavedPlay({ list, handleSave, savedPlay, playName, setPlayName }) {
+function SavedPlay({ list, handleSave, savedPlay, setSavedPlay, playName, setPlayName }) {
     return (
         <>
         {list.length === 0 ? null : 
           <form onSubmit={handleSave}>
             <input
                onChange={(e) => setPlayName(e.target.value)}
-               name='playlist'
-               value={playName} 
+               value={playName}
+               name='playlist' 
             />  
             <button type='submit'>Save Play Name</button>
           </form>
@@ -24,6 +24,7 @@ function SavedPlay({ list, handleSave, savedPlay, playName, setPlayName }) {
         </li>
       ))}
     </ul>
+    <button onClick={() => setSavedPlay({})}>Clear Saved Playlist</button>
   </div>
 )}
         </>

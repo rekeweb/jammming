@@ -40,8 +40,9 @@ function App() {
 
     const handleSave = (event) => {
       event.preventDefault();
+      const name = event.target.elements['playlist'].name;
       setSavedPlay(
-        {'playlist': playName, 'list': list}
+        {[name]: playName, 'list': list}
       );
       setPlayName('');
       setList([]);
@@ -72,6 +73,7 @@ function App() {
     list={list}
     handleSave={handleSave}
     savedPlay={savedPlay}
+    setSavedPlay={setSavedPlay}
     playName={playName}
     setPlayName={setPlayName}
     />
