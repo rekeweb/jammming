@@ -20,7 +20,7 @@ function SavedPlay({ list, handleSave, savedPlay, setSavedPlay, playName, setPla
     <ul>
       {savedPlay.list.map((song, index) => (
         <li key={index}>
-          {song.title} by {song.artist}
+          {song.name} by {song.artist}. Album - {song.album}
         </li>
       ))}
     </ul>

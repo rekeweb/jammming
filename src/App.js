@@ -5,9 +5,9 @@ import List from './Components/List';
 import SavedPlay from './Components/SavedPlay';
 
 const MUSICS = [
-  {artist: '50 cent', title: 'in da club'},
-  {artist: 'snoop dogg', title: 'drop it like its hot'},
-  {artist: '50 cent', title: 'gangsta'}
+  {artist: '50 cent', name: 'in da club', album: 'on fire', id: 1},
+  {artist: 'snoop dogg', name: 'drop it like its hot', album: 'thirty shades', id: 2},
+  {artist: '50 cent', name: 'gangsta', album: 'no pressure', id: 3}
 ];
 
 function App() {
@@ -23,19 +23,23 @@ function App() {
         if (search.trim()){
         setFilteredSongs(MUSICS.filter((music) => 
           music.artist.toLocaleLowerCase().includes(search.toLocaleLowerCase()) || 
-          music.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())));
+          music.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())));
         setSearch('');
       }      
     }
 
       
     const handleList = (song) => {
-        if (!list.some(s => s.artist === song.artist && s.title === song.title)) {
+        if (!list.some(s => s.artist === song.artist && s.name === song.name)) {
         setList((prev) => [
            song,
             ...prev
         ]);
       }
+    }
+
+    const handleRemove = (song) => {
+      setList((prev) => prev.filter((one) => one.name !== song.name));
     }
 
     const handleSave = (event) => {
@@ -44,6 +48,7 @@ function App() {
       setSavedPlay(
         {[name]: playName, 'list': list}
       );
+
       setPlayName('');
       setList([]);
       setFilteredSongs([]);
@@ -67,6 +72,7 @@ function App() {
     <List 
     list={list}
     setList={setList}
+    handleRemove={handleRemove}
     />
 
     <SavedPlay 

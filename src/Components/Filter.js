@@ -9,7 +9,7 @@ function Filter({ filteredSongs, handleList }) {
             <ul>
             {filteredSongs.map((song, index) => (
                 <li key={index}>
-                    {song.artist} - {song.title}
+                    {song.artist} - {song.name} - {song.album}
                     <button onClick={() => handleList(song)}>Add</button>    
                 </li>    
             ))}
