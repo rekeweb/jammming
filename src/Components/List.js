@@ -1,35 +1,24 @@
 import React from 'react';
 
-function List({ filteredSongs, handleList }) {
+function List({ list, setList }) {
 
     return (
+    <>
+      {list.length === 0 ? null : (   
         <>
-            {filteredSongs.length === 0 ? <p>No music found</p> : (
-           
-            <ul>
-            {filteredSongs.map((song, index) => (
-                <li key={index}>
-                    {song.artist} - {song.title}
-                    <button onClick={() => handleList(song)}>Add</button>    
-                </li>    
-            ))}
-            </ul>
-            )} 
+          <ul>
+             {list.map((song, index) => (
+              <li key={index}>{song.artist} - {song.title}</li>
+              ))}
+         </ul>
+          <button onClick={() => setList([])}>Clear List</button>
+          
+          
+          
         </>
+      )} 
+    </>
     );
 };
 
 export default List;
-/*
-{list && (   
-    <>
-    <ul>
-    {list.map((song, index) => (
-        <li key={index}>{song.artist} - {song.title}</li>
-    ))}
-    </ul>
-    {list && <button onClick={() => setList([])}>Clear</button>}
-    
-   </>
-)} 
-*/

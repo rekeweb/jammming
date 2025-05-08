@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 
 
 function SearchBar(props) {
-   const { handleSearch, search, setSearch } = props;
+   const { handleSearch, search, setSearch, setFilteredSongs } = props;
 
     return (
-
+        <>
           <form onSubmit={handleSearch}>
           <input
             name='searchBar'
@@ -14,7 +14,10 @@ function SearchBar(props) {
             onChange={(e) => setSearch(e.target.value)}
           />
           <button type='submit'>Search</button>
+          
           </form>
+          <button onClick={() => setFilteredSongs([])}>Clear Search</button>
+          </>
     )
 };
 

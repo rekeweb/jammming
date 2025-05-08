@@ -1,7 +1,8 @@
-import styles from './App.module.css';
 import React, { useState } from 'react';
 import SearchBar from './Components/SearchBar';
 import Filter from './Components/Filter';
+import List from './Components/List';
+import SavedPlay from './Components/SavedPlay';
 
 const MUSICS = [
   {artist: '50 cent', title: 'in da club'},
@@ -14,13 +15,17 @@ function App() {
     const [search, setSearch] = useState('');
     const [filteredSongs, setFilteredSongs] = useState([]);
     const [list, setList] = useState([]);
+    const [savedPlay, setSavedPlay] = useState({});
+    const [playName, setPlayName] = useState('');
 
     const handleSearch = (event) => {
         event.preventDefault();
+        if (search.trim()){
         setFilteredSongs(MUSICS.filter((music) => 
           music.artist.toLocaleLowerCase().includes(search.toLocaleLowerCase()) || 
           music.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())));
-        setSearch('');      
+        setSearch('');
+      }      
     }
 
       
@@ -33,6 +38,16 @@ function App() {
       }
     }
 
+    const handleSave = (event) => {
+      event.preventDefault();
+      setSavedPlay(
+        {'playlist': playName, 'list': list}
+      );
+      setPlayName('');
+      setList([]);
+      setFilteredSongs([]);
+    }
+
   return (
     <div>
    
@@ -40,6 +55,7 @@ function App() {
     handleSearch={handleSearch} 
     search={search}
     setSearch={setSearch}
+    setFilteredSongs={setFilteredSongs}
     />
 
     <Filter 
@@ -47,6 +63,19 @@ function App() {
     handleList={handleList} 
     />
        
+    <List 
+    list={list}
+    setList={setList}
+    />
+
+    <SavedPlay 
+    list={list}
+    handleSave={handleSave}
+    savedPlay={savedPlay}
+    playName={playName}
+    setPlayName={setPlayName}
+    />
+
     </div>
   );
 }

@@ -4,7 +4,7 @@ function Filter({ filteredSongs, handleList }) {
 
     return (
         <>
-            {filteredSongs.length === 0 ? <p>No music found</p> : (
+            {!filteredSongs ? <p>No music found</p> : (
            
             <ul>
             {filteredSongs.map((song, index) => (
