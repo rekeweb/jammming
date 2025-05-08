@@ -14,8 +14,19 @@
   padding: 10px 0;
 }
 
-.main {
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
+}
 
+
+.result {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 .left-section {

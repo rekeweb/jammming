@@ -3,7 +3,6 @@ import React from 'react';
 function SavedPlay({ list, handleSave, savedPlay, setSavedPlay, playName, setPlayName }) {
     return (
         <>
-        {list.length === 0 ? null : 
           <form onSubmit={handleSave}>
             <input
                onChange={(e) => setPlayName(e.target.value)}
@@ -12,7 +11,7 @@ function SavedPlay({ list, handleSave, savedPlay, setSavedPlay, playName, setPla
             />  
             <button type='submit'>Save Play Name</button>
           </form>
-        }
+        
 
 {savedPlay['playlist'] && (
   <div>

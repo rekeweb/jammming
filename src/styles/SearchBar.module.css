@@ -1,0 +1,37 @@
+.input {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  .buttonGroup {
+    display: flex;
+    gap: 10px; /* adds space between buttons */
+    margin-top: 10px; /* optional spacing from input */
+    justify-content: center;
+  }
+
+  .clearButton {
+    background-color: #f44336;
+  }
+
+  .clearButton:hover {
+    background-color: #d32f2f;
+  }

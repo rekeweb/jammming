@@ -3,6 +3,7 @@ import SearchBar from './Components/SearchBar';
 import Filter from './Components/Filter';
 import List from './Components/List';
 import SavedPlay from './Components/SavedPlay';
+import styles from './styles/App.module.css';
 
 const MUSICS = [
   {artist: '50 cent', name: 'in da club', album: 'on fire', id: 1},
@@ -48,42 +49,68 @@ function App() {
       setSavedPlay(
         {[name]: playName, 'list': list}
       );
-
       setPlayName('');
       setList([]);
       setFilteredSongs([]);
     }
 
+    const handleClearSearch = () => {
+      setFilteredSongs([]);
+      setList([]);
+    }
+
   return (
-    <div>
-   
-    <SearchBar 
-    handleSearch={handleSearch} 
-    search={search}
-    setSearch={setSearch}
-    setFilteredSongs={setFilteredSongs}
-    />
+    <div className={styles.container}>
+      <header className={styles.header}>
+          <h1>Ja<span style={{color: 'purple'}}>mmm</span>ing</h1>
+        </header>
 
-    <Filter 
-    filteredSongs={filteredSongs}
-    handleList={handleList} 
-    />
+     <main>
+
+        <section className={styles.searchBar}>
+          <SearchBar 
+            handleSearch={handleSearch} 
+            search={search}
+            setSearch={setSearch}
+            setFilteredSongs={setFilteredSongs}
+            handleClearSearch = {handleClearSearch}
+          />
+        </section>
        
-    <List 
-    list={list}
-    setList={setList}
-    handleRemove={handleRemove}
-    />
+    
+    <section className={styles.result}>
 
-    <SavedPlay 
-    list={list}
-    handleSave={handleSave}
-    savedPlay={savedPlay}
-    setSavedPlay={setSavedPlay}
-    playName={playName}
-    setPlayName={setPlayName}
-    />
+      <Filter 
+        filteredSongs={filteredSongs}
+        handleList={handleList} 
+      />
+       
+       <div>
 
+       <SavedPlay 
+        list={list}
+        handleSave={handleSave}
+        savedPlay={savedPlay}
+        setSavedPlay={setSavedPlay}
+        playName={playName}
+        setPlayName={setPlayName}
+        />
+
+      <List 
+        list={list}
+        setList={setList}
+        handleRemove={handleRemove}
+      />
+
+      
+      
+      </div>
+
+    </section>
+
+
+   
+      </main>  
     </div>
   );
 }

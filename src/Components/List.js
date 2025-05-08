@@ -4,8 +4,6 @@ function List({ list, setList, handleRemove }) {
 
     return (
     <>
-      {list.length === 0 ? null : (   
-        <>
           <ul>
              {list.map((song) => (
               <li key={song.title}>
@@ -14,12 +12,6 @@ function List({ list, setList, handleRemove }) {
                 </li>
               ))}
          </ul>
-          <button onClick={() => setList([])}>Clear List</button>
-          
-          
-          
-        </>
-      )} 
     </>
     );
 };

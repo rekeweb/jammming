@@ -4,9 +4,8 @@ function Filter({ filteredSongs, handleList }) {
 
     return (
         <>
-            {!filteredSongs ? <p>No music found</p> : (
-           
             <ul>
+            <h2>Results</h2>
             {filteredSongs.map((song, index) => (
                 <li key={index}>
                     {song.artist} - {song.name} - {song.album}
@@ -14,7 +13,6 @@ function Filter({ filteredSongs, handleList }) {
                 </li>    
             ))}
             </ul>
-            )} 
         </>
     );
 };
