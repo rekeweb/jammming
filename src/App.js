@@ -51,7 +51,6 @@ function App() {
       );
       setPlayName('');
       setList([]);
-      setFilteredSongs([]);
     }
 
     const handleClearSearch = () => {
@@ -80,12 +79,14 @@ function App() {
     
     <section className={styles.result}>
 
+      <div className={styles.leftSection}>
       <Filter 
         filteredSongs={filteredSongs}
         handleList={handleList} 
       />
-       
-       <div>
+       </div>
+
+       <div className={styles.rightSection}>
 
        <SavedPlay 
         list={list}

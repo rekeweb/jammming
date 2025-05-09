@@ -1,6 +1,9 @@
 .container {
-  background-color: purple;
-  height: 100vh;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/tiger.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
 }
 
 .header {
@@ -25,16 +28,21 @@
 
 .result {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-around;
 }
 
-.left-section {
-
+.leftSection {
+  background-color: rgba(48, 25, 52, 0.6);
+  width: 500px;
+  height: 500px;
+  color: white;
 }
 
-.right-section {
-
+.rightSection {
+  background-color: rgba(48, 25, 52, 0.6);
+  width: 500px;
+  height: 500px;
+  color: white;
 }
 
 .footer {

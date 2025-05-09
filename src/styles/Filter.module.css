@@ -1,0 +1,64 @@
+.heading {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .resultsList {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent */
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .songItem {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .songItem:last-child {
+    border-bottom: none;
+  }
+  
+  .addButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .addButton:hover {
+    background-color: #45a049;
+  }
+  
+  .songItem {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .songInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .songName {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .songDetails {
+    font-size: 0.9rem;
+    color: #cccccc;
+  }

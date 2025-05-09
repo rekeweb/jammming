@@ -1,6 +1,6 @@
 import React from 'react';
 
-function List({ list, setList, handleRemove }) {
+function List({ list, handleRemove }) {
 
     return (
     <>
