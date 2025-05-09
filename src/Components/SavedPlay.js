@@ -1,29 +1,27 @@
 import React from 'react';
+import styles from '../styles/SavedPlay.module.css';
 
 function SavedPlay({ list, handleSave, savedPlay, setSavedPlay, playName, setPlayName }) {
     return (
         <>
-          <form onSubmit={handleSave}>
+          <form onSubmit={handleSave} className={styles.form}>
             <input
                onChange={(e) => setPlayName(e.target.value)}
                value={playName}
                name='playlist' 
+               className={styles.input}
+               placeholder='Playlist Name'
             />  
-            <button type='submit'>Save Play Name</button>
+            <div className={styles.buttonGroup}>
+            <button type='submit' className={styles.buttonSave}>Save</button>
+            <button onClick={() => setSavedPlay({})} className={styles.buttonClear}>Clear</button>
+            </div>
+            
           </form>
         
-
 {savedPlay['playlist'] && (
   <div>
-    <h3>{savedPlay['playlist']}</h3>
-    <ul>
-      {savedPlay.list.map((song, index) => (
-        <li key={index}>
-          {song.name} by {song.artist}. Album - {song.album}
-        </li>
-      ))}
-    </ul>
-    <button onClick={() => setSavedPlay({})}>Clear Saved Playlist</button>
+    <h3 className={styles.savedName}>{savedPlay['playlist']}</h3>
   </div>
 )}
         </>

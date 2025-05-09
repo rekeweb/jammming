@@ -1,14 +1,18 @@
 import React from 'react';
+import styles from '../styles/List.module.css';
 
 function List({ list, handleRemove }) {
 
     return (
     <>
-          <ul>
+          <ul className={styles.resultsList}>
              {list.map((song) => (
-              <li key={song.title}>
-                {song.artist} - {song.name} - {song.album}
-                <button onClick={() => handleRemove(song)}>Remove</button>
+              <li key={song.title} className={styles.songItem}>
+                  <div className={styles.songInfo}>
+                    <div className={styles.songName}>{song.name}</div> 
+                    <div className={styles.songDetails}>{song.artist} | {song.album}</div>
+                  </div>
+                  <button onClick={() => handleRemove(song)} className={styles.removeButton}>Remove</button>
                 </li>
               ))}
          </ul>

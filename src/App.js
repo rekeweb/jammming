@@ -88,6 +88,7 @@ function App() {
 
        <div className={styles.rightSection}>
 
+
        <SavedPlay 
         list={list}
         handleSave={handleSave}
@@ -97,11 +98,13 @@ function App() {
         setPlayName={setPlayName}
         />
 
+
       <List 
         list={list}
         setList={setList}
         handleRemove={handleRemove}
       />
+
 
       
       
