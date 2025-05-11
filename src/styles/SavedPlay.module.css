@@ -32,6 +32,7 @@
     color: white;
     font-weight: bold;
     padding: 5px 10px;
+    border-radius: 8px;
 }
 
 .buttonSave:hover {
@@ -45,6 +46,7 @@
     color: white;
     font-weight: bold;
     padding: 5px 10px;
+    border-radius: 8px;
 }
 
 .buttonClear:hover {
